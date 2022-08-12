@@ -1,0 +1,14 @@
+{% for result in Result %}
+<hr>
+<p>{{result}}<p>
+<hr>
+{%  endfor  %}
+<br>
+<br>
+<form action="" method="POST">
+    {% csrf_token %}
+    <button type="Submit" name="Next" value="True">Next</button>
+    <br>
+    <br>
+    <button type="Submit" name="Finish"><a href="Index">Finish</a></button>
+</form>

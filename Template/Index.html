@@ -1,0 +1,116 @@
+<style>
+
+input {
+            width: 50%;
+            padding: 10px 10px;
+            margin: 8px 0;
+            box-sizing: border-box;
+          }
+
+input[type='Button']
+        {
+            Width:100%;
+            padding: 10px 10px;
+            margin: 8px 0;
+            box-sizing: border-box;
+        }
+
+select  {
+          width: 50%;
+          padding: 10px 10px;
+          margin: 8px 0;
+          box-sizing: border-box;
+
+          }
+
+  .row    {
+
+            display: flex;
+            flex-wrap: wrap;
+            height:10px;
+            padding: 0 4px;
+          }
+
+  .column {
+             flex:30%;
+            max-width: 33%;
+            padding: 0 4px;
+         }
+</style>
+<html>
+<h1> Welcome to Searcher </h1>
+
+<form action=" " method="POST">
+
+   {% csrf_token %}
+  <div class="row">
+  <div class="column">
+    <label> Search Tag </label>
+    <input type="text" name="Tagged">
+    <br>
+    <br>
+    <p>{{Tagged}}</p>
+  </div>
+  <div class="column">
+    <label>from date</label>
+    <input type='date' name='FromDate'>
+    <br>
+    <br>
+    <p>{{FromDate}}</p>
+  </div>
+  <div class="column">
+    <label> To Date </label>
+    <input type='date' name='ToDate'>
+  </div>
+
+  <div class="column">
+      <label for="Pages">Page</label>
+      <input type="text" name="Pages">
+  </div>
+  <div class="column">
+    <label for="Pagesize">Pagesize</label>
+    <input type="text" name="Pagesize">
+  </div>
+  <div class="column">
+    <label for="Not_Tagged">NotTagged</label>
+    <input type="text" name="Not_Tagged">
+  </div>
+  <div class="column">
+    <label for="MinDate">Min Date</label>
+    <input type="date" name="MinDate">
+  </div>
+  <div class="column">
+    <label for="MaxDate">Max Date</label>
+    <input type="date" name="MaxDate">
+  </div>
+  <div class="column">
+    <label for="Order">Order</label>
+    <select name="Order">
+      <option> asc </option>
+      <option> desc</option>
+    </select>
+  </div>
+  <div class="column">
+    <label for="Sort">Sort by</label>
+    <select  name="Sort">
+      <option>activity</option>
+      <option>votes</option>
+      <option>creation</option>
+      <option>relevance</option>
+    </select>
+  </div>
+  <div class="column">
+    <label for="InTitle">In Title</label>
+    <input type="text" name="InTitle">
+  </div>
+  <br>
+  <br>
+  <div>
+    <h2> Search Query Will Be Displayed Below <h2>
+    <textarea name="SearchQuery" rows="8" cols="80"></textarea>
+  </div>
+  <div>
+    <input type="submit" class="form" name="Submit" value="Submit">
+  </div>
+  </form>}
+  </html>
